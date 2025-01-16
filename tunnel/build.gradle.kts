@@ -20,38 +20,11 @@ android {
     defaultConfig {
         minSdk = 21
     }
-    externalNativeBuild {
-        cmake {
-            path("tools/CMakeLists.txt")
-        }
-    }
+
     testOptions.unitTests.all {
         it.testLogging { events(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED) }
     }
-    buildTypes {
-        all {
-            externalNativeBuild {
-                cmake {
-                    targets("libwg-go.so", "libwg.so", "libwg-quick.so")
-                    arguments("-DGRADLE_USER_HOME=${project.gradle.gradleUserHomeDir}")
-                }
-            }
-        }
-        release {
-            externalNativeBuild {
-                cmake {
-                    arguments("-DANDROID_PACKAGE_NAME=${pkg}")
-                }
-            }
-        }
-        debug {
-            externalNativeBuild {
-                cmake {
-                    arguments("-DANDROID_PACKAGE_NAME=${pkg}.debug")
-                }
-            }
-        }
-    }
+
     lint {
         disable += "LongLogTag"
         disable += "NewApi"
