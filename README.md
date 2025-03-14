@@ -38,3 +38,10 @@ dependencies {
 ## Translating
 
 Please help us translate the app into several languages on [our translation platform](https://crowdin.com/project/WireGuard).
+
+## 环境配置
+1. jdk17
+2. cmake 3.22.1
+3. android-ndk 25.1.8937393
+4. go 1.24.1
+5. make 需要修改 tunnel/tools/CMakeLists.txt 文件，set(MAKE_PATH "D:/Android/SDK/ndk/25.1.8937393/prebuilt/windows-x86_64/bin/make.exe")

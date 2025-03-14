@@ -12,6 +12,7 @@ plugins {
 
 android {
     compileSdk = 34
+    ndkVersion = "25.1.8937393"
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
